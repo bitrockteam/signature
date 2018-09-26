@@ -18,7 +18,7 @@ module.exports = {
     chunkFilename: '[name].[hash].js'
   },
 
-  mode: isProd ? envs.production : envs.development ,
+  mode: isProd() ? envs.production : envs.development ,
   devtool: 'source-map',
 
   plugins: [
@@ -70,5 +70,13 @@ module.exports = {
           'sass-loader']
       }
     ]
+  },
+
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8080,
+    hot: true,
+    historyApiFallback: true
   }
 }

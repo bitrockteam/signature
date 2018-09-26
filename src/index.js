@@ -1,6 +1,9 @@
 
+import 'normalize.css';
+import 'skeleton';
 import './styles/main.css';
-import './libs/app';
+
+import './components/app';
 
 console.log('Project started...');
 
