@@ -31,8 +31,8 @@ const _render = () => {
 document.body.addEventListener('update-data', evt => {
   const det = evt.detail;
   data[det.key] = det.value;
+  console.log(evt.detail, data);
   _render();
-  console.log(evt.detail);
 });
 
 _render();

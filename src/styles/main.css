@@ -9,3 +9,9 @@ code {
 h4 {
   margin-top: 30px;
 }
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}

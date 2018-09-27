@@ -1,9 +1,28 @@
 
 import { html } from 'lit-html';
+import { companies } from './companies';
 
 const phone = num => html`<div style="color:rgb(0,0,0);line-height:normal;font-family:Helvetica;font-size:11px">${num}</div>`;
 
 const checkPhone = data => data.length ? phone(data) : '';
+
+const website = company => {
+  const current = companies.filter(e => e.label === company)[0];
+  return html`<div style="line-height:normal;font-family:&quot;Calibri Light&quot;,sans-serif;color:rgb(68,68,68);font-size:11.3333px"><a
+                href=${current.url} style="color:rgb(17,85,204)" target="_blank">${current.url}</a></div>`
+}
+
+const treviso = company => {
+  return company !== companies[2].label ? 
+    html`<div style="line-height:normal;font-size:10px"><b style="color:rgb(68,68,68);font-family:&quot;Calibri Light&quot;,sans-serif;font-size:11.3333px">
+          <font color="#666666"><a href="https://maps.google.com/?q=Treviso+%E2%80%93+Viale+della+Repubblica+156&amp;entry=gmail&amp;source=g"
+              style="color:rgb(17,85,204)" target="_blank">Treviso</a></font>
+        </b>
+        <font color="#444444" style="color:rgb(68,68,68);font-family:&quot;Calibri Light&quot;,sans-serif;font-size:11.3333px">&nbsp;<a
+            href="https://maps.google.com/?q=Treviso+%E2%80%93+Viale+della+Repubblica+156&amp;entry=gmail&amp;source=g"
+            style="color:rgb(17,85,204)" target="_blank">– Viale della Repubblica 156</a>/A</font>
+      </div>` : '';
+}
 
 export const signature = data => html`
 <div class="gmail_signature" data-smartmail="gmail_signature">
@@ -41,18 +60,10 @@ export const signature = data => html`
                     </b>
                     <font color="#444444" style="font-family:&quot;Calibri Light&quot;,sans-serif;font-size:11.3333px">&nbsp;<a
                         href="https://maps.google.com/?q=Milano+%E2%80%93+Via+Borsieri+41&amp;entry=gmail&amp;source=g"
-                        style="color:rgb(17,85,204)" target="_blank">– Via Borsieri 41</a></font>
+                        style="color:rgb(17,85,204)" target="_blank">– Via Borsieri ${data.company === 'Radicalbit' ? '41' : '41'}</a></font>
                   </div>
-                  <div style="line-height:normal;font-size:10px"><b style="color:rgb(68,68,68);font-family:&quot;Calibri Light&quot;,sans-serif;font-size:11.3333px">
-                      <font color="#666666"><a href="https://maps.google.com/?q=Treviso+%E2%80%93+Viale+della+Repubblica+156&amp;entry=gmail&amp;source=g"
-                          style="color:rgb(17,85,204)" target="_blank">Treviso</a></font>
-                    </b>
-                    <font color="#444444" style="color:rgb(68,68,68);font-family:&quot;Calibri Light&quot;,sans-serif;font-size:11.3333px">&nbsp;<a
-                        href="https://maps.google.com/?q=Treviso+%E2%80%93+Viale+della+Repubblica+156&amp;entry=gmail&amp;source=g"
-                        style="color:rgb(17,85,204)" target="_blank">– Viale della Repubblica 156</a>/A</font>
-                  </div>
-                  <div style="line-height:normal;font-family:&quot;Calibri Light&quot;,sans-serif;color:rgb(68,68,68);font-size:11.3333px"><a
-                      href="http://bitrock.it/" style="color:rgb(17,85,204)" target="_blank">bitrock.it</a></div>
+                  ${treviso(data.company)}
+                  ${website(data.company)}
                 </div>
               </div>
               <div dir="ltr">

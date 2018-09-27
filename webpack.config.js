@@ -28,6 +28,7 @@ module.exports = {
       title: pkg.name,
       description: pkg.description,
       color: pkg.themeColor,
+      name: pkg.displayName,
       template: './src/assets/index.html'
     }),
 

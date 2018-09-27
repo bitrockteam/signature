@@ -1,5 +1,6 @@
 import { html } from 'lit-html';
 import { signature } from './../libs/templates';
+import { companies } from './../libs/companies'
 
 const update = e => {
   const event = new CustomEvent("update-data", {
@@ -37,6 +38,17 @@ export const form = data => html`
       <label for="phone">Phone number:</label>
       <input class="twelve columns" type="text" name="phone"
         @keyup=${e => update(e)}>
+    </div>
+    <div class="row">
+      <label for="company">Company:</label>
+      <div class="options">
+        ${ companies.map(c => html`
+          <span><input type="radio" value=${c.label} name="company"
+            ?checked=${c.label === data.company}
+            @change=${e => update(e)}
+          > ${c.label}</span>
+        `) }
+      </div>
     </div>
   </form>
   <div id="preview">

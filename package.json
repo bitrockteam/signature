@@ -1,14 +1,14 @@
 {
-  "name": "basic-starter-kit",
+  "name": "signature-builder",
   "version": "1.0.0",
   "main": "src/index.js",
-  "displayName": "Starter kit",
+  "displayName": "Signature builder",
   "config": {
     "themeColor": "#e74e0f"
   },
-  "description": "Your next awesome project",
-  "repository": "git@github.com:bitrock-frontend/basic-starter-kit.git",
-  "author": "Salvatore Laisa <moebiusmania@gmail.com>",
+  "description": "Company email signature 'builder'.",
+  "repository": "git@github.com:bitrockteam/signature.git",
+  "author": "Salvatore Laisa <salvatore.laisa@bitrock.it>",
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --hot",
