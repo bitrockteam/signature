@@ -20,7 +20,7 @@ const treviso = company => {
         </b>
         <font color="#444444" style="color:rgb(68,68,68);font-family:&quot;Calibri Light&quot;,sans-serif;font-size:11.3333px">&nbsp;<a
             href="https://maps.google.com/?q=Treviso+%E2%80%93+Viale+della+Repubblica+156&amp;entry=gmail&amp;source=g"
-            style="color:rgb(17,85,204)" target="_blank">– Viale della Repubblica 156</a>/A</font>
+            style="color:rgb(17,85,204)" target="_blank">– Viale della Repubblica 156/A</a></font>
       </div>` : '';
 }
 
