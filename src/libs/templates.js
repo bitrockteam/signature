@@ -24,6 +24,14 @@ const treviso = company => {
       </div>` : '';
 }
 
+const logo = company => {
+  const filename = company ? company.toLowerCase() : 'bitrock';
+  return html`<div>
+    <img src="https://github.com/bitrockteam/signature/blob/master/logos/${filename}.png?raw=true"
+      height="24"><br>
+    </div>`;
+}
+
 export const signature = data => html`
 <div class="gmail_signature" data-smartmail="gmail_signature">
   <div dir="ltr">
@@ -51,7 +59,7 @@ export const signature = data => html`
                 <div style="color:rgb(0,0,0);line-height:normal;font-family:Helvetica;font-size:11px"><br></div>
                 <div style="color:rgb(0,0,0);line-height:normal;font-family:Helvetica;font-size:11px">
                   <div style="font-size:12px;line-height:normal">
-                    <font color="#626b72"><b style="font-size:13px"><span style="font-size:12px"><b style="color:rgb(179,67,37)">BITROCK</b><span
+                    <font color="#626b72"><b style="font-size:13px"><span style="font-size:12px"><b style="color:rgb(179,67,37)">${data.company.toUpperCase()}</b><span
                             style="color:rgb(179,67,37)">&nbsp;</span><b style="color:rgb(179,67,37)">S.r.l.</b>&nbsp;</span></b></font>
                   </div>
                   <div style="line-height:normal;font-size:10px"><b style="font-family:&quot;Calibri Light&quot;,sans-serif;font-size:11.3333px">
@@ -68,8 +76,7 @@ export const signature = data => html`
               </div>
               <div dir="ltr">
                 <div><br></div>
-                <div><img src="https://ci4.googleusercontent.com/proxy/2786WCPr7zOQ1L-zDGIjbCtVSg8xzUxgmqa5_qemXm5DVBw93uT2hMNeUZDJytIMbzHq7NLSpm_tDARSqL_4im9wxqV-LTNUZ2oeKYz8-nSHxv4geIuB7AUGjFxg6TJ9tV78N8EE9QWUzjqPJwK1xhVQ0Q=s0-d-e1-ft#https://drive.google.com/a/bitrock.it/uc?id=1qeEnD7yFodvwM72J49die1GvvqP9wS-N&amp;export=download"
-                    width="96" height="24"><br></div>
+                ${logo(data.company)}
               </div>
             </div>
           </div>
