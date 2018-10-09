@@ -225,4 +225,4 @@ const y=n=>null===n||!("object"==typeof n||"function"==typeof n);class v{constru
 `)(O)}
   </main>
 `,B=()=>{T(j(),M);const n=document.querySelector("pre code"),e=document.querySelector("#preview div");n.innerHTML=(n=>String(n).replace(/[&<>"'`=\/]/g,n=>I[n]))(e.innerHTML)};document.body.addEventListener("update-data",n=>{const e=n.detail;O[e.key]=e.value,console.log(n.detail,O),B()}),B(),console.log("Project started..."),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").then(n=>{console.log("SW registered: ",n)}).catch(n=>{console.log("SW registration failed: ",n)})}),document.querySelector(".js-warning").style.display="none"}]);
-//# sourceMappingURL=main.83e347c3d9e6335f235d.js.map
+//# sourceMappingURL=main.1986fe2e4f8131c1b9d4.js.map
