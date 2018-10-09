@@ -13,7 +13,8 @@ const update = e => {
 };
 
 export const form = data => html`
-  <form>
+<div class="grid grid--3">
+  <form class="grid--column-form">
     <div class="row">
       <label for="firstname">First name:</label>
       <input class="twelve columns" type="text" name="firstname" 
@@ -51,10 +52,11 @@ export const form = data => html`
       </div>
     </div>
   </form>
-  <div id="preview">
-    <h4>Preview</h4>
+  <div id="preview" class="grid--column-preview">
+    <h4 class="hidden">Preview</h4>
     ${signature(data)}
   </div>
+</div>
   <div id="code">
     <h4>HTML Code (for copy & paste)</h4>
     <pre>
