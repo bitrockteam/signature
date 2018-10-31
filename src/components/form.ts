@@ -1,9 +1,9 @@
-import { html } from 'lit-html';
-import { signature } from './../libs/templates';
-import { companies } from './../libs/companies'
+import { html, TemplateResult } from 'lit-html';
+import { signature } from '../libs/templates';
+import { companies } from '../libs/companies'
 
-const update = e => {
-  const event = new CustomEvent("update-data", {
+const update = (e :UpdateEvent) :void => {
+  const event = new CustomEvent('update-data', {
     detail: {
       key: e.target.name,
       value: e.target.value
@@ -12,7 +12,7 @@ const update = e => {
   document.body.dispatchEvent(event);
 };
 
-export const form = data => html`
+export const form = (data :State) :TemplateResult => html`
 <div class="grid grid--3">
   <form class="grid--column-form">
     <div class="row">

@@ -57,6 +57,10 @@ module.exports = {
     })
   ],
 
+  resolve: {
+    extensions: ['.mjs', '.ts', '.js']
+  },
+
   module: {
     rules: [
       {
@@ -69,6 +73,16 @@ module.exports = {
           'style-loader',
           'css-loader?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]',
           'sass-loader']
+      },
+      {
+        test: /\.ts?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
       }
     ]
   },
