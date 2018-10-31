@@ -224,5 +224,5 @@ const y=n=>null===n||!("object"==typeof n||"function"==typeof n);class v{constru
   </code>
 `)(O)}
   </main>
-`,B=()=>{T(j(),M);const n=document.querySelector("pre code"),e=document.querySelector("#preview div");n.innerHTML=(n=>String(n).replace(/[&<>"'`=\/]/g,n=>I[n]))(e.innerHTML)};document.body.addEventListener("update-data",n=>{const e=n.detail;O[e.key]=e.value,console.log(n.detail,O),B()}),B(),console.log("Project started..."),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").then(n=>{console.log("SW registered: ",n)}).catch(n=>{console.log("SW registration failed: ",n)})}),document.querySelector(".js-warning").style.display="none"}]);
-//# sourceMappingURL=main.fca3a1bfd4a14e33bb04.js.map
+`,B=()=>{T(j(),M);const n=document.querySelector("pre code"),e=document.querySelector("#preview div");n.innerHTML=(n=>String(n).replace(/[&<>"'`=\/]/g,n=>I[n]))(e.innerHTML)};document.body.addEventListener("update-data",n=>{const e=n.detail;O[e.key]=e.value,B()}),B(),console.log("Project started..."),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").then(n=>{console.log("SW registered: ",n)}).catch(n=>{console.log("SW registration failed: ",n)})}),document.querySelector(".js-warning").style.display="none"}]);
+//# sourceMappingURL=main.2bea4a99ff504030769e.js.map
