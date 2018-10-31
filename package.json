@@ -31,6 +31,7 @@
     "source-map-loader": "0.2.4",
     "style-loader": "0.21.0",
     "ts-loader": "5.3.0",
+    "ts-node": "7.0.1",
     "typescript": "3.1.4",
     "webpack": "4.16.1",
     "webpack-cli": "3.0.8",
@@ -44,7 +45,12 @@
     "skeleton": "https://github.com/mahmutduva/Skeleton"
   },
   "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
     "require": [
+      "ts-node/register",
       "esm"
     ]
   }
