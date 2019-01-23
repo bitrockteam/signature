@@ -3,7 +3,8 @@ import { html, TemplateResult } from 'lit-html';
 import { companies } from './companies';
 
 const confidential = () :TemplateResult =>
-  html`<p><b>CONFIDENTIALITY:</b> This message contains confidential information intended only for the use of the addressee. It’s
+  html`<p><b>CONFIDENTIALITY:</b> 
+  This message contains confidential information intended only for the use of the addressee. It’s
 intended that any unauthorized use, dissemination or disclosure of this message for purpose that does not comply with
 its purpose is prohibited. If you received this message in error, or are not the intended recipient, please delete it
 and any copies from your systems and immediately notify. Thank you.</p>
