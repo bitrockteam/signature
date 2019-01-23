@@ -1,6 +1,4 @@
-
-import 'normalize.css';
-import 'skeleton';
+import '@amber-ds/visual/';
 import './styles/main.css';
 
 import './components/app';
