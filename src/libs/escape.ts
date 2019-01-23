@@ -1,4 +1,3 @@
-
 const entityMap :object = {
   '&': '&amp;',
   '<': '&lt;',
