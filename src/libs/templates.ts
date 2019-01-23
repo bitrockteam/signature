@@ -2,6 +2,18 @@
 import { html, TemplateResult } from 'lit-html';
 import { companies } from './companies';
 
+const confidential = () :TemplateResult =>
+  html`<p><b>CONFIDENTIALITY:</b> This message contains confidential information intended only for the use of the addressee. It’s
+intended that any unauthorized use, dissemination or disclosure of this message for purpose that does not comply with
+its purpose is prohibited. If you received this message in error, or are not the intended recipient, please delete it
+and any copies from your systems and immediately notify. Thank you.</p>
+
+<p><b>AVVISO DI RISERVATEZZA:</b>Le informazioni contenute in questo messaggio sono strettamente riservate ed esclusivamente
+indirizzate al destinatario indicato (oppure alla persona responsabile di rimetterlo al destinatario). Resta inteso che
+qualsiasi uso, riproduzione o divulgazione di questo messaggio a fini diversi da quelli oggetto della presente email è
+vietato. Nel caso in cui aveste ricevuto questa mail per errore, vogliate avvertire il mittente al più presto e subito
+dopo distruggerla.</p>`;
+
 const phone = (num :string) :TemplateResult => 
   html`<div style="color:rgb(0,0,0);line-height:normal;font-family:Helvetica;font-size:11px">${num}</div>`;
 
@@ -80,6 +92,9 @@ export const signature = (data :State) :TemplateResult => html`
               <div dir="ltr">
                 <div><br></div>
                 ${logo(data.company)}
+              </div>
+              <div dir="ltr" class="confidential">
+                ${confidential()}
               </div>
             </div>
           </div>
