@@ -15,18 +15,19 @@ const update = (e :UpdateEvent) :void => {
 export const form = (data :State) :TemplateResult => html`
 <div class="row">
   <form class="col-12 col-md-6">
+    <h4>Fill out with your data</h4>
     <div class="">
-      <label for="firstname">First name:</label>
+      <label for="firstname">First name</label>
       <input class="twelve columns" type="text" name="firstname" 
         @keyup=${e => update(e)}>
     </div>
     <div class="">
-      <label for="lastname">Last name:</label>
+      <label for="lastname">Last name</label>
       <input class="twelve columns" type="text" name="lastname" 
         @keyup=${e => update(e)}>
     </div>
     <div class="">
-      <label for="role">Role:</label>
+      <label for="role">Role</label>
       <input class="twelve columns" type="text" name="role"
         @keyup=${e => update(e)}>
     </div>
@@ -36,12 +37,12 @@ export const form = (data :State) :TemplateResult => html`
       <span class="error">Please provide a valid email address</span>
     </div>
     <div class="">
-      <label for="phone">Phone number:</label>
+      <label for="phone">Phone number</label>
       <input class="twelve columns" type="text" name="phone"
         @keyup=${e => update(e)}>
     </div>
     <div class="">
-      <label for="company">Company:</label>
+      <label for="company">Company</label>
       <div class="options">
         ${ companies.map(c => html`
           <span><input type="radio" value=${c.label} name="company"
@@ -53,7 +54,7 @@ export const form = (data :State) :TemplateResult => html`
     </div>
   </form>
   <div id="preview" class="col-12 col-md-6">
-    <h4 class="hidden">Preview</h4>
+    <h4>Preview (for copy & paste)</h4>
     ${signature(data)}
   </div>
 </div>
