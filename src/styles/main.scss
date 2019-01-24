@@ -1,0 +1,38 @@
+.container h1 {
+  margin-bottom: 3rem;
+}
+
+.container h4 {
+  margin-bottom: 2rem;
+}
+
+.container .row {
+  margin-bottom: 3rem;
+}
+
+input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], textarea, select {
+  width: 100%;
+}
+
+.gmail_signature {
+  padding: 2rem;
+  border: 1px solid #999999;
+  border-radius: 0;
+  overflow: scroll;
+  white-space: initial;
+}
+
+.options span {
+  margin-right: 1rem;
+}
+
+.container {
+    margin: 24px;
+    max-width: 1120px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin: 32px auto;
+  }
+}

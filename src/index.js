@@ -1,5 +1,5 @@
 import '@amber-ds/visual/';
-import './styles/main.css';
+import './styles/main.scss';
 
 import './components/app';
 
