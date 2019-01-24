@@ -1,0 +1,41 @@
+{
+  "icons": [
+    {
+      "src": "icon_512x512.b65f9f8639de54f697644395bc9a8de9.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.e301c39e907b6f50c58e9bc342c7fb75.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.c1f56a393e01f682030a48419155e172.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.db77d23e1bd3392b20b2090db3077bdf.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.d68b919841468d7a950adc54e6eded7e.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.5a689742bc85b19d1978b767612d852f.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "signature-builder",
+  "short_name": "Signature builder",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "",
+  "description": "Company email signature 'builder'.",
+  "background_color": "#ffffff"
+}
