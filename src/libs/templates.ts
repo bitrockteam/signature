@@ -50,7 +50,7 @@ export const signature = (data :State) :TemplateResult => html`
   <div>
     <b style="color: #5C5C5C">${data.firstname}</b>&nbsp;<b style="color: #3D3D3D">${data.lastname}</b>
   </div>
-  <div style="font-size: 12px; line-height: 16px;"><b style="color: #5C5C5C;">${data.role}</b></div>
+  <div style="font-size: 12px; line-height: 16px;"><b style="color: #7A7A7A;">${data.role}</b></div>
   <div style="line-height: 16px;"><br></div>
   <div>
     <div style="font-size: 12px; line-height: 16px;;">
