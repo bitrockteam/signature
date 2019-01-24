@@ -39,7 +39,7 @@
     "workbox-webpack-plugin": "3.6.3"
   },
   "dependencies": {
-    "@amber-ds/visual": "1.0.0",
+    "@amber-ds/visual": "1.0.1",
     "lit-html": "1.0.0-rc.2"
   },
   "ava": {

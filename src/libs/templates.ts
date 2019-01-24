@@ -48,19 +48,19 @@ export const signature = (data :State) :TemplateResult => html`
 <div class="gmail_signature" data-smartmail="gmail_signature">
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px; line-height: 24px; font-weight: normal; color: #1F1F1F;">
   <div>
-    <b style="color: #5C5C5C">${data.firstname}</b>&nbsp;<b style="color: ##1F1F1F">${data.lastname}</b>
+    <b style="color: #5C5C5C">${data.firstname}</b>&nbsp;<b style="color: #3D3D3D">${data.lastname}</b>
   </div>
   <div style="font-size: 12px; line-height: 16px;"><b style="color: #5C5C5C;">${data.role}</b></div>
   <div style="line-height: 16px;"><br></div>
   <div>
     <div style="font-size: 12px; line-height: 16px;;">
-      <a href="mailto:${data.email}" target="_blank" style="color: #1155cc;">${data.email}</a>
+      <a href="mailto:${data.email}" target="_blank" style="color: #1155CC;">${data.email}</a>
     </div>
     ${checkPhone(data.phone)}
   </div>
   <div style="line-height: 16px;"><br></div>
   <div style="font-size: 14px; line-height: 20px;">
-    <b style="color: #2c3940;">${data.company.toUpperCase()}</b>&nbsp;<b style="color: ##1F1F1F;">s.r.l.</b>
+    <b style="color: #3D3D3D;">${data.company.toUpperCase()}</b>&nbsp;<b style="color: #3D3D3D;">s.r.l.</b>
   </div>
   <div style="font-size: 12px; line-height: 16px;">
     <a href="https://www.google.com/maps/place/Via+Pietro+Borsieri,+41,+20159+Milano+MI" target="_blank" style="color: #1155cc;"><b>Milano</b> – Via Borsieri ${data.company === 'Radicalbit' ? '41' : '41'}</a>
