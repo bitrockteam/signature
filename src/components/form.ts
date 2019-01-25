@@ -1,6 +1,7 @@
 import { html, TemplateResult } from 'lit-html';
 import { signature } from '../libs/templates';
-import { companies } from '../libs/companies'
+import { companies } from '../libs/companies';
+// import '@amber-ds/components/code';
 
 const update = (e :UpdateEvent) :void => {
   const event = new CustomEvent('update-data', {
@@ -63,5 +64,7 @@ export const form = (data :State) :TemplateResult => html`
     <pre>
       <code></code>
     </pre>
+
+    <!-- <amber-code-snippet clipboard></amber-code-snippet> -->
   </code>
 `;

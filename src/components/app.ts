@@ -29,14 +29,15 @@ const app = () :TemplateResult => html`
 const _render = () :void => {
   render(app(), root);
   const code :Element = document.querySelector('pre code');
+  // const AmberCode: Element = document.querySelector('amber-code-snippet');
   const preview :HTMLDivElement = document.querySelector('#preview div');
   code.innerHTML = escapeHtml(preview.innerHTML);
+  // AmberCode.innerHTML = escapeHtml(preview.innerHTML);
 }
 
 document.body.addEventListener('update-data', (evt :CustomEvent) => {
   const det :FieldData = evt.detail;
   data[det.key] = det.value;
-  // console.log(evt.detail, data);
   _render();
 });
 
