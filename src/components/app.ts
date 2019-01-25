@@ -17,6 +17,11 @@ const data :State = {
 const app = () :TemplateResult => html`
   <main class="container">
     <h1>Email signature builder</h1>
+    <p>Just compile the form and then copy the data that your client requires:</p>
+    <ul>
+      <li><b>Gmail:</b> you copy the preview on the right and paste in the signature field.</li>
+      <li><b>Apple Mail:</b> similar to Gmail, but you have to uncheck <i>"Always match my default messsage font"</i>.</li>
+    </ul>
     ${form(data)}
   </main>
 `;
