@@ -18,39 +18,26 @@
     "test": "npm run test:unit"
   },
   "devDependencies": {
-    "ava": "1.1.0",
     "css-loader": "2.1.0",
-    "esm": "3.1.1",
     "favicons-webpack-plugin": "0.0.9",
     "gh-pages": "2.0.1",
     "html-webpack-plugin": "3.2.0",
-    "jsdom": "13.1.0",
     "node-sass": "4.11.0",
     "sass-loader": "7.1.0",
     "source-map-loader": "0.2.4",
     "style-loader": "0.23.1",
     "ts-loader": "5.3.3",
-    "ts-node": "8.0.1",
-    "typescript": "3.2.4",
-    "webpack": "4.29.0",
-    "webpack-cli": "3.2.1",
-    "webpack-dev-server": "3.1.14",
+    "ts-node": "8.0.2",
+    "typescript": "3.3.3",
+    "webpack": "4.29.5",
+    "webpack-cli": "3.2.3",
+    "webpack-dev-server": "3.2.0",
     "webpack-pwa-manifest": "4.0.0",
     "workbox-webpack-plugin": "3.6.3"
   },
   "dependencies": {
-    "@amber-ds/components": "1.0.0",
+    "@amber-ds/components": "1.0.2",
     "@amber-ds/visual": "1.0.1",
-    "lit-html": "1.0.0-rc.2"
-  },
-  "ava": {
-    "compileEnhancements": false,
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register",
-      "esm"
-    ]
+    "lit-html": "1.0.0"
   }
 }

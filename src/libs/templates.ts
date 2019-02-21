@@ -2,16 +2,19 @@ import { html, TemplateResult } from 'lit-html';
 import { companies } from './companies';
 
 const confidential = () :TemplateResult =>
-  html`<div style="font-size: 12px; line-height: 16px;"><p style="font-size: 12px; line-height: 16px; color: #999999;"><b style="font-weight: bold;">CONFIDENTIALITY:</b> This message contains confidential information intended only for the use of the addressee. It’s
+  html`
+  <div style="font-size: 12px; line-height: 16px;">
+    <p style="font-size: 12px; line-height: 16px; color: #999999; margin-bottom: 0;"><b style="font-weight: bold;">CONFIDENTIALITY:</b> This message contains confidential information intended only for the use of the addressee. It’s
 intended that any unauthorized use, dissemination or disclosure of this message for purpose that does not comply with
 its purpose is prohibited. If you received this message in error, or are not the intended recipient, please delete it
 and any copies from your systems and immediately notify. Thank you.</p>
-
-<p style="font-size: 12px; line-height: 16px; color: #999999;"><b style="font-weight: bold;">AVVISO DI RISERVATEZZA:</b>Le informazioni contenute in questo messaggio sono strettamente riservate ed esclusivamente
+    <div style="line-height: 16px;"><br></div>
+    <p style="font-size: 12px; line-height: 16px; color: #999999; margin-bottom: 0;"><b style="font-weight: bold;">AVVISO DI RISERVATEZZA:</b> Le informazioni contenute in questo messaggio sono strettamente riservate ed esclusivamente
 indirizzate al destinatario indicato (oppure alla persona responsabile di rimetterlo al destinatario). Resta inteso che
 qualsiasi uso, riproduzione o divulgazione di questo messaggio a fini diversi da quelli oggetto della presente email è
 vietato. Nel caso in cui aveste ricevuto questa mail per errore, vogliate avvertire il mittente al più presto e subito
-dopo distruggerla.</p></div>`;
+dopo distruggerla.</p>
+  </div>`;
 
 const phone = (num :string) :TemplateResult => 
   html`<div style="line-height: 16px;"><a href="tel:${num}" target="_blank" style="font-size: 12px; line-height: 16px; color: #1155cc;">${num}</a></div>`;
@@ -48,7 +51,7 @@ export const signature = (data :State) :TemplateResult => html`
 <div class="gmail_signature" data-smartmail="gmail_signature">
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px; line-height: 24px; font-weight: normal; color: #1F1F1F;">
   <div>
-    <b style="color: #5C5C5C; font-weight: bold;">${data.firstname}</b>&nbsp;<b style="color: #3D3D3D; font-weight: bold;">${data.lastname}</b>
+    <b style="color: #3D3D3D; font-weight: bold;">${data.firstname}</b>&nbsp;<b style="color: #5C5C5C; font-weight: bold;">${data.lastname}</b>
   </div>
   <div style="font-size: 12px; line-height: 16px;"><b style="color: #7A7A7A; font-weight: bold;">${data.role}</b></div>
   <div style="line-height: 16px;"><br></div>
