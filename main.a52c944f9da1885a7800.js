@@ -53,7 +53,7 @@ class b{constructor(n,e,t){this._parts=[],this.template=n,this.processor=e,this.
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-const y=n=>null===n||!("object"==typeof n||"function"==typeof n);class x{constructor(n,e,t){this.dirty=!0,this.element=n,this.name=e,this.strings=t,this.parts=[];for(let n=0;n<t.length-1;n++)this.parts[n]=this._createPart()}_createPart(){return new w(this)}_getValue(){const n=this.strings,e=n.length-1;let t="";for(let i=0;i<e;i++){t+=n[i];const e=this.parts[i];if(void 0!==e){const n=e.value;if(null!=n&&(Array.isArray(n)||"string"!=typeof n&&n[Symbol.iterator]))for(const e of n)t+="string"==typeof e?e:String(e);else t+="string"==typeof n?n:String(n)}}return t+=n[e]}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class w{constructor(n){this.value=void 0,this.committer=n}setValue(n){n===a||y(n)&&n===this.value||(this.value=n,o(n)||(this.committer.dirty=!0))}commit(){for(;o(this.value);){const n=this.value;this.value=a,n(this)}this.value!==a&&this.committer.commit()}}class E{constructor(n){this.value=void 0,this._pendingValue=void 0,this.options=n}appendInto(n){this.startNode=n.appendChild(f()),this.endNode=n.appendChild(f())}insertAfterNode(n){this.startNode=n,this.endNode=n.nextSibling}appendIntoPart(n){n._insert(this.startNode=f()),n._insert(this.endNode=f())}insertAfterPart(n){n._insert(this.startNode=f()),this.endNode=n.endNode,n.endNode=this.startNode}setValue(n){this._pendingValue=n}commit(){for(;o(this._pendingValue);){const n=this._pendingValue;this._pendingValue=a,n(this)}const n=this._pendingValue;n!==a&&(y(n)?n!==this.value&&this._commitText(n):n instanceof v?this._commitTemplateResult(n):n instanceof Node?this._commitNode(n):Array.isArray(n)||n[Symbol.iterator]?this._commitIterable(n):n===l?(this.value=l,this.clear()):this._commitText(n))}_insert(n){this.endNode.parentNode.insertBefore(n,this.endNode)}_commitNode(n){this.value!==n&&(this.clear(),this._insert(n),this.value=n)}_commitText(n){const e=this.startNode.nextSibling;n=null==n?"":n,e===this.endNode.previousSibling&&3===e.nodeType?e.data=n:this._commitNode(document.createTextNode("string"==typeof n?n:String(n))),this.value=n}_commitTemplateResult(n){const e=this.options.templateFactory(n);if(this.value&&this.value.template===e)this.value.update(n.values);else{const t=new b(e,n.processor,this.options),i=t._clone();t.update(n.values),this._commitNode(i),this.value=t}}_commitIterable(n){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let t,i=0;for(const o of n)void 0===(t=e[i])&&(t=new E(this.options),e.push(t),0===i?t.appendIntoPart(this):t.insertAfterPart(e[i-1])),t.setValue(o),t.commit(),i++;i<e.length&&(e.length=i,this.clear(t&&t.endNode))}clear(n=this.startNode){s(this.startNode.parentNode,n.nextSibling,this.endNode)}}class S{constructor(n,e,t){if(this.value=void 0,this._pendingValue=void 0,2!==t.length||""!==t[0]||""!==t[1])throw new Error("Boolean attributes can only contain a single expression");this.element=n,this.name=e,this.strings=t}setValue(n){this._pendingValue=n}commit(){for(;o(this._pendingValue);){const n=this._pendingValue;this._pendingValue=a,n(this)}if(this._pendingValue===a)return;const n=!!this._pendingValue;this.value!==n&&(n?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name)),this.value=n,this._pendingValue=a}}class C extends x{constructor(n,e,t){super(n,e,t),this.single=2===t.length&&""===t[0]&&""===t[1]}_createPart(){return new k(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class k extends w{}let z=!1;try{const n={get capture(){return z=!0,!1}};window.addEventListener("test",n,n),window.removeEventListener("test",n,n)}catch(n){}class _{constructor(n,e,t){this.value=void 0,this._pendingValue=void 0,this.element=n,this.eventName=e,this.eventContext=t,this._boundHandleEvent=(n=>this.handleEvent(n))}setValue(n){this._pendingValue=n}commit(){for(;o(this._pendingValue);){const n=this._pendingValue;this._pendingValue=a,n(this)}if(this._pendingValue===a)return;const n=this._pendingValue,e=this.value,t=null==n||null!=e&&(n.capture!==e.capture||n.once!==e.once||n.passive!==e.passive),i=null!=n&&(null==e||t);t&&this.element.removeEventListener(this.eventName,this._boundHandleEvent,this._options),i&&(this._options=N(n),this.element.addEventListener(this.eventName,this._boundHandleEvent,this._options)),this.value=n,this._pendingValue=a}handleEvent(n){"function"==typeof this.value?this.value.call(this.eventContext||this.element,n):this.value.handleEvent(n)}}const N=n=>n&&(z?{capture:n.capture,passive:n.passive,once:n.once}:n.capture);
+const y=n=>null===n||!("object"==typeof n||"function"==typeof n);class x{constructor(n,e,t){this.dirty=!0,this.element=n,this.name=e,this.strings=t,this.parts=[];for(let n=0;n<t.length-1;n++)this.parts[n]=this._createPart()}_createPart(){return new w(this)}_getValue(){const n=this.strings,e=n.length-1;let t="";for(let i=0;i<e;i++){t+=n[i];const e=this.parts[i];if(void 0!==e){const n=e.value;if(null!=n&&(Array.isArray(n)||"string"!=typeof n&&n[Symbol.iterator]))for(const e of n)t+="string"==typeof e?e:String(e);else t+="string"==typeof n?n:String(n)}}return t+=n[e]}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class w{constructor(n){this.value=void 0,this.committer=n}setValue(n){n===a||y(n)&&n===this.value||(this.value=n,o(n)||(this.committer.dirty=!0))}commit(){for(;o(this.value);){const n=this.value;this.value=a,n(this)}this.value!==a&&this.committer.commit()}}class E{constructor(n){this.value=void 0,this._pendingValue=void 0,this.options=n}appendInto(n){this.startNode=n.appendChild(f()),this.endNode=n.appendChild(f())}insertAfterNode(n){this.startNode=n,this.endNode=n.nextSibling}appendIntoPart(n){n._insert(this.startNode=f()),n._insert(this.endNode=f())}insertAfterPart(n){n._insert(this.startNode=f()),this.endNode=n.endNode,n.endNode=this.startNode}setValue(n){this._pendingValue=n}commit(){for(;o(this._pendingValue);){const n=this._pendingValue;this._pendingValue=a,n(this)}const n=this._pendingValue;n!==a&&(y(n)?n!==this.value&&this._commitText(n):n instanceof v?this._commitTemplateResult(n):n instanceof Node?this._commitNode(n):Array.isArray(n)||n[Symbol.iterator]?this._commitIterable(n):n===l?(this.value=l,this.clear()):this._commitText(n))}_insert(n){this.endNode.parentNode.insertBefore(n,this.endNode)}_commitNode(n){this.value!==n&&(this.clear(),this._insert(n),this.value=n)}_commitText(n){const e=this.startNode.nextSibling;n=null==n?"":n,e===this.endNode.previousSibling&&3===e.nodeType?e.data=n:this._commitNode(document.createTextNode("string"==typeof n?n:String(n))),this.value=n}_commitTemplateResult(n){const e=this.options.templateFactory(n);if(this.value instanceof b&&this.value.template===e)this.value.update(n.values);else{const t=new b(e,n.processor,this.options),i=t._clone();t.update(n.values),this._commitNode(i),this.value=t}}_commitIterable(n){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let t,i=0;for(const o of n)void 0===(t=e[i])&&(t=new E(this.options),e.push(t),0===i?t.appendIntoPart(this):t.insertAfterPart(e[i-1])),t.setValue(o),t.commit(),i++;i<e.length&&(e.length=i,this.clear(t&&t.endNode))}clear(n=this.startNode){s(this.startNode.parentNode,n.nextSibling,this.endNode)}}class S{constructor(n,e,t){if(this.value=void 0,this._pendingValue=void 0,2!==t.length||""!==t[0]||""!==t[1])throw new Error("Boolean attributes can only contain a single expression");this.element=n,this.name=e,this.strings=t}setValue(n){this._pendingValue=n}commit(){for(;o(this._pendingValue);){const n=this._pendingValue;this._pendingValue=a,n(this)}if(this._pendingValue===a)return;const n=!!this._pendingValue;this.value!==n&&(n?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name)),this.value=n,this._pendingValue=a}}class C extends x{constructor(n,e,t){super(n,e,t),this.single=2===t.length&&""===t[0]&&""===t[1]}_createPart(){return new k(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class k extends w{}let z=!1;try{const n={get capture(){return z=!0,!1}};window.addEventListener("test",n,n),window.removeEventListener("test",n,n)}catch(n){}class _{constructor(n,e,t){this.value=void 0,this._pendingValue=void 0,this.element=n,this.eventName=e,this.eventContext=t,this._boundHandleEvent=(n=>this.handleEvent(n))}setValue(n){this._pendingValue=n}commit(){for(;o(this._pendingValue);){const n=this._pendingValue;this._pendingValue=a,n(this)}if(this._pendingValue===a)return;const n=this._pendingValue,e=this.value,t=null==n||null!=e&&(n.capture!==e.capture||n.once!==e.once||n.passive!==e.passive),i=null!=n&&(null==e||t);t&&this.element.removeEventListener(this.eventName,this._boundHandleEvent,this._options),i&&(this._options=N(n),this.element.addEventListener(this.eventName,this._boundHandleEvent,this._options)),this.value=n,this._pendingValue=a}handleEvent(n){"function"==typeof this.value?this.value.call(this.eventContext||this.element,n):this.value.handleEvent(n)}}const N=n=>n&&(z?{capture:n.capture,passive:n.passive,once:n.once}:n.capture);
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -79,11 +79,38 @@ const y=n=>null===n||!("object"==typeof n||"function"==typeof n);class x{constru
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */function A(n){let e=I.get(n.type);void 0===e&&(e={stringsArray:new WeakMap,keyString:new Map},I.set(n.type,e));let t=e.stringsArray.get(n.strings);if(void 0!==t)return t;const i=n.strings.join(d);return void 0===(t=e.keyString.get(i))&&(t=new m(n,n.getTemplateElement()),e.keyString.set(i,t)),e.stringsArray.set(n.strings,t),t}const I=new Map,T=new WeakMap,R=(n,...e)=>new v(n,e,"html",F),j=[{label:"Bitrock",url:"https://bitrock.it"},{label:"Databiz",url:"https://databiz.it"},{label:"Radicalbit",url:"https://radicabit.io"}],M=n=>n.length?(n=>R`<div style="line-height: 16px;"><a href="tel:${n}" target="_blank" style="font-size: 12px; line-height: 16px; color: #1155cc;">${n}</a></div>`)(n):"",V=n=>R`
+ */function A(n){let e=I.get(n.type);void 0===e&&(e={stringsArray:new WeakMap,keyString:new Map},I.set(n.type,e));let t=e.stringsArray.get(n.strings);if(void 0!==t)return t;const i=n.strings.join(d);return void 0===(t=e.keyString.get(i))&&(t=new m(n,n.getTemplateElement()),e.keyString.set(i,t)),e.stringsArray.set(n.strings,t),t}const I=new Map,T=new WeakMap;
+/**
+ * @license
+ * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at
+ * http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at
+ * http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at
+ * http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at
+ * http://polymer.github.io/PATENTS.txt
+ */
+/**
+ * @license
+ * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at
+ * http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at
+ * http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at
+ * http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at
+ * http://polymer.github.io/PATENTS.txt
+ */
+(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.0.0");const R=(n,...e)=>new v(n,e,"html",F),j=[{label:"Bitrock",url:"https://bitrock.it"},{label:"Databiz",url:"https://databiz.it"},{label:"Radicalbit",url:"https://radicabit.io"}],V=n=>n.length?(n=>R`<div style="line-height: 16px;"><a href="tel:${n}" target="_blank" style="font-size: 12px; line-height: 16px; color: #1155cc;">${n}</a></div>`)(n):"",M=n=>R`
 <div class="gmail_signature" data-smartmail="gmail_signature">
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px; line-height: 24px; font-weight: normal; color: #1F1F1F;">
   <div>
-    <b style="color: #5C5C5C; font-weight: bold;">${n.firstname}</b>&nbsp;<b style="color: #3D3D3D; font-weight: bold;">${n.lastname}</b>
+    <b style="color: #3D3D3D; font-weight: bold;">${n.firstname}</b>&nbsp;<b style="color: #5C5C5C; font-weight: bold;">${n.lastname}</b>
   </div>
   <div style="font-size: 12px; line-height: 16px;"><b style="color: #7A7A7A; font-weight: bold;">${n.role}</b></div>
   <div style="line-height: 16px;"><br></div>
@@ -91,7 +118,7 @@ const y=n=>null===n||!("object"==typeof n||"function"==typeof n);class x{constru
     <div style="font-size: 12px; line-height: 16px;;">
       <a href="mailto:${n.email}" target="_blank" style="color: #1155CC;">${n.email}</a>
     </div>
-    ${M(n.phone)}
+    ${V(n.phone)}
   </div>
   <div style="line-height: 16px;"><br></div>
   <div style="font-size: 14px; line-height: 20px;">
@@ -114,16 +141,19 @@ const y=n=>null===n||!("object"==typeof n||"function"==typeof n);class x{constru
     <img src="https://github.com/bitrockteam/signature/blob/master/logos/${e}.png?raw=true" height="32px" nosend="1">
   </div>`})(n.company)}
   <div style="line-height: 16px;"><br></div>
-  ${(()=>R`<div style="font-size: 12px; line-height: 16px;"><p style="font-size: 12px; line-height: 16px; color: #999999;"><b style="font-weight: bold;">CONFIDENTIALITY:</b> This message contains confidential information intended only for the use of the addressee. It’s
+  ${(()=>R`
+  <div style="font-size: 12px; line-height: 16px;">
+    <p style="font-size: 12px; line-height: 16px; color: #999999; margin-bottom: 0;"><b style="font-weight: bold;">CONFIDENTIALITY:</b> This message contains confidential information intended only for the use of the addressee. It’s
 intended that any unauthorized use, dissemination or disclosure of this message for purpose that does not comply with
 its purpose is prohibited. If you received this message in error, or are not the intended recipient, please delete it
 and any copies from your systems and immediately notify. Thank you.</p>
-
-<p style="font-size: 12px; line-height: 16px; color: #999999;"><b style="font-weight: bold;">AVVISO DI RISERVATEZZA:</b>Le informazioni contenute in questo messaggio sono strettamente riservate ed esclusivamente
+    <div style="line-height: 16px;"><br></div>
+    <p style="font-size: 12px; line-height: 16px; color: #999999; margin-bottom: 0;"><b style="font-weight: bold;">AVVISO DI RISERVATEZZA:</b> Le informazioni contenute in questo messaggio sono strettamente riservate ed esclusivamente
 indirizzate al destinatario indicato (oppure alla persona responsabile di rimetterlo al destinatario). Resta inteso che
 qualsiasi uso, riproduzione o divulgazione di questo messaggio a fini diversi da quelli oggetto della presente email è
 vietato. Nel caso in cui aveste ricevuto questa mail per errore, vogliate avvertire il mittente al più presto e subito
-dopo distruggerla.</p></div>`)()}
+dopo distruggerla.</p>
+  </div>`)()}
 </div>
 </div>`,$=n=>{const e=new CustomEvent("update-data",{detail:{key:n.target.name,value:n.target.value}});document.body.dispatchEvent(e)},L={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","/":"&#x2F;","`":"&#x60;","=":"&#x3D;"},U=document.querySelector("#root"),O={firstname:"",lastname:"",role:"",email:"",phone:"",company:"Bitrock"},B=()=>R`
   <main class="container">
@@ -176,7 +206,7 @@ dopo distruggerla.</p></div>`)()}
   </form>
   <div id="preview" class="col-12 col-md-6">
     <h4>Preview (for copy & paste)</h4>
-    ${V(n)}
+    ${M(n)}
   </div>
 </div>
   <div id="code">
@@ -189,18 +219,5 @@ dopo distruggerla.</p></div>`)()}
   </code>
 `)(O)}
   </main>
-`,D=()=>{((n,e,t)=>{let i=T.get(e);void 0===i&&(s(e,e.firstChild),T.set(e,i=new E(Object.assign({templateFactory:A},t))),i.appendInto(e)),i.setValue(n),i.commit()})(B(),U);const n=document.querySelector("pre code"),e=document.querySelector("#preview div");n.innerHTML=(n=>String(n).replace(/[&<>"'`=\/]/g,n=>L[n]))(e.innerHTML)};
-/**
- * @license
- * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
- * This code may only be used under the BSD style license found at
- * http://polymer.github.io/LICENSE.txt
- * The complete set of authors may be found at
- * http://polymer.github.io/AUTHORS.txt
- * The complete set of contributors may be found at
- * http://polymer.github.io/CONTRIBUTORS.txt
- * Code distributed by Google as part of the polymer project is also
- * subject to an additional IP rights grant found at
- * http://polymer.github.io/PATENTS.txt
- */document.body.addEventListener("update-data",n=>{const e=n.detail;O[e.key]=e.value,D()}),D(),console.log("Project started..."),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").then(n=>{console.log("SW registered: ",n)}).catch(n=>{console.log("SW registration failed: ",n)})}),document.querySelector(".js-warning").style.display="none"}]);
-//# sourceMappingURL=main.092b58459878b0743479.js.map
+`,D=()=>{((n,e,t)=>{let i=T.get(e);void 0===i&&(s(e,e.firstChild),T.set(e,i=new E(Object.assign({templateFactory:A},t))),i.appendInto(e)),i.setValue(n),i.commit()})(B(),U);const n=document.querySelector("pre code"),e=document.querySelector("#preview div");n.innerHTML=(n=>String(n).replace(/[&<>"'`=\/]/g,n=>L[n]))(e.innerHTML)};document.body.addEventListener("update-data",n=>{const e=n.detail;O[e.key]=e.value,D()}),D(),console.log("Project started..."),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").then(n=>{console.log("SW registered: ",n)}).catch(n=>{console.log("SW registration failed: ",n)})}),document.querySelector(".js-warning").style.display="none"}]);
+//# sourceMappingURL=main.a52c944f9da1885a7800.js.map
