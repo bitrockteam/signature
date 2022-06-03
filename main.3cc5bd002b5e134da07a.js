@@ -214,4 +214,4 @@ and any copies from your systems and immediately notify. Thank you.</p>
 `)(O)}
   </main>
 `,D=()=>{((n,e,t)=>{let i=T.get(e);void 0===i&&(s(e,e.firstChild),T.set(e,i=new E(Object.assign({templateFactory:A},t))),i.appendInto(e)),i.setValue(n),i.commit()})(B(),U);const n=document.querySelector("pre code"),e=document.querySelector("#preview div");n.innerHTML=(n=>String(n).replace(/[&<>"'`=\/]/g,n=>L[n]))(e.innerHTML)};document.body.addEventListener("update-data",n=>{const e=n.detail;O[e.key]=e.value,D()}),D(),console.log("Project started..."),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").then(n=>{console.log("SW registered: ",n)}).catch(n=>{console.log("SW registration failed: ",n)})}),document.querySelector(".js-warning").style.display="none"}]);
-//# sourceMappingURL=main.8201e2b1ca3a4ab64930.js.map
+//# sourceMappingURL=main.3cc5bd002b5e134da07a.js.map
