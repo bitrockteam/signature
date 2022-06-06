@@ -125,7 +125,7 @@ const v=n=>null===n||!("object"==typeof n||"function"==typeof n);class x{constru
     <b style="color: #3D3D3D; font-weight: bold;">${n.company.toUpperCase()}</b>&nbsp;<b style="color: #3D3D3D; font-weight: bold;">s.r.l.</b>
   </div>
   <div style="font-size: 11px; line-height: 15px;">
-    <a href="https://www.google.com/maps/place/Via+Pietro+Borsieri,+41,+20159+Milano+MI" target="_blank" style="color: #1155cc;"><b style="font-weight: bold;">Milano</b> – Via Borsieri ${n.company,"41"}</a>
+    <a href="https://www.google.com/maps/place/Via+Tortona,+4,+20144+Milano+MI" target="_blank" style="color: #1155cc;"><b style="font-weight: bold;">Milano</b> – Via Tortona 4}</a>
   </div>
   ${(n=>n!==R[2].label?j`
     <div style="font-size: 11px; line-height: 15px;">
@@ -214,4 +214,4 @@ and any copies from your systems and immediately notify. Thank you.</p>
 `)(O)}
   </main>
 `,D=()=>{((n,e,t)=>{let i=T.get(e);void 0===i&&(s(e,e.firstChild),T.set(e,i=new E(Object.assign({templateFactory:A},t))),i.appendInto(e)),i.setValue(n),i.commit()})(B(),U);const n=document.querySelector("pre code"),e=document.querySelector("#preview div");n.innerHTML=(n=>String(n).replace(/[&<>"'`=\/]/g,n=>L[n]))(e.innerHTML)};document.body.addEventListener("update-data",n=>{const e=n.detail;O[e.key]=e.value,D()}),D(),console.log("Project started..."),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").then(n=>{console.log("SW registered: ",n)}).catch(n=>{console.log("SW registration failed: ",n)})}),document.querySelector(".js-warning").style.display="none"}]);
-//# sourceMappingURL=main.2d78f37b9111303fb9fe.js.map
+//# sourceMappingURL=main.4102e0fc106ce76883c2.js.map
