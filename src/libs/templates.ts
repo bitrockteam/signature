@@ -72,7 +72,7 @@ export const signature = (data :State) :TemplateResult => html`
     <b style="color: #3D3D3D; font-weight: bold;">${data.company.toUpperCase()}</b>&nbsp;<b style="color: #3D3D3D; font-weight: bold;">s.r.l.</b>
   </div>
   <div style="font-size: 11px; line-height: 15px;">
-    <a href="https://www.google.com/maps/place/Via+Pietro+Borsieri,+41,+20159+Milano+MI" target="_blank" style="color: #1155cc;"><b style="font-weight: bold;">Milano</b> – Via Borsieri ${data.company === 'Radicalbit' ? '41' : '41'}</a>
+    <a href="https://www.google.com/maps/place/Via+Tortona,+4,+20144+Milano+MI" target="_blank" style="color: #1155cc;"><b style="font-weight: bold;">Milano</b> – Via Tortona 4</a>
   </div>
   ${treviso(data.company)}
   ${website(data.company)}
